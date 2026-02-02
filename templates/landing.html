@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{{ data.business }}</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+
+<section class="landing-hero">
+  <div class="landing-hero-content">
+
+    <h1 class="brand">{{ data.business }}</h1>
+    <h2 class="headline">{{ data.headline }}</h2>
+
+    <form method="POST" action="/submit/{{ slug }}" class="lead-form">
+      <input name="name" placeholder="Your Name" required>
+      <input name="email" placeholder="Email Address" required>
+      <input name="phone" placeholder="Phone Number" required>
+
+      <button class="cta-btn">{{ data.cta }}</button>
+    </form>
+
+  </div>
+</section>
+
+</body>
+</html>
+

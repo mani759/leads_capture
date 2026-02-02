@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin Dashboard</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body class="dashboard-body">
+
+  <div class="dashboard-container">
+    <h1 class="dashboard-title">Admin Dashboard</h1>
+
+    {% for page in dashboard_data %}
+      <div class="landing-card">
+        <h2 class="business-title">{{ page.business }}</h2>
+
+        {% if page.leads %}
+          <table class="leads-table">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for lead in page.leads %}
+              <tr>
+                <td>{{ lead.name }}</td>
+                <td>{{ lead.email }}</td>
+                <td>{{ lead.phone }}</td>
+                <td>
+                  <span class="status-badge">{{ lead.status }}</span>
+                </td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        {% else %}
+          <p class="no-leads">No leads yet.</p>
+        {% endif %}
+      </div>
+    {% endfor %}
+
+  </div>
+
+</body>
+</html>

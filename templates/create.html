@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create a landing page</title>
+ <link rel="stylesheet" href="{{url_for('static',filename='styles.css')}}">
+</head>
+<body>
+    <section class="create-page">
+        <div class="create-form">
+            <h2>Create Your Landing Page</h2>
+            <form method="POST" action="/create">
+            <label>Business Name</label>
+            <input name="business_name" id="businessName" type="text" placeholder="your startup name">
+
+            <label>Headline</label>
+            <input   name="headline"  id="headlineText" type="text" placeholder="Your main headline">
+
+            <label>CTA Button Text</label>
+            <input  name="cta" id="ctaText" type="text" placeholder="Get Started">
+            <button class="primary-btn">Generate Landing Page</button>
+            </form>
+
+        </div>
+
+<!-- previer card -->
+<div class="create-preview">
+    <p class="preview-brand"  id="previewBrand">Your Brand</p>
+    <h3 id="previewHeadline">Your headline will appear here</h3>
+    <button class="preview-btn" id="previewBtn">CTA</button>
+</div>
+    </section>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
