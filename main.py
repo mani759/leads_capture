@@ -14,8 +14,8 @@ cred = credentials.Certificate(firebase_key)
 firebase_admin.initialize_app(cred)
 db = firestore.client()
 
-# leads={}
-# landing_page={}
+leads={}
+landing_page={}
 app=Flask(__name__)
 @app.route("/")
 def home():
