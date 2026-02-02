@@ -2,18 +2,20 @@ from flask import Flask, render_template,request
 import uuid
 import firebase_admin
 from firebase_admin import credentials, firestore
-from flask import url_for, request
+from flask import url_for
+import os
+import json
 
 
 
 
-
-cred = credentials.Certificate("firebase_key.json")
+firebase_key = json.loads(os.environ["FIREBASE_KEY"])
+cred = credentials.Certificate(firebase_key)
 firebase_admin.initialize_app(cred)
 db = firestore.client()
 
-leads={}
-landing_page={}
+# leads={}
+# landing_page={}
 app=Flask(__name__)
 @app.route("/")
 def home():
