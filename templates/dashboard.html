@@ -15,6 +15,20 @@
     {% for page in dashboard_data %}
       <div class="landing-card">
         <h2 class="business-title">{{ page.business }}</h2>
+        
+    <p>
+      Landing Page:
+      <a href="{{ page.landing_url }}" target="_blank">
+        {{ page.landing_url }}
+      </a>
+    </p>
+
+    <button onclick="navigator.clipboard.writeText('{{ page.landing_url }}')">
+      Copy Link
+    </button>
+
+    <hr>
+
 
         {% if page.leads %}
           <table class="leads-table">

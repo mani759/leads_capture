@@ -9,7 +9,21 @@
     <link rel="stylesheet" href="{{url_for('static',filename='styles.css')}}">
 </head>
 <body>
+    
+    <div class="top-nav">
+  {% if logged_in %}
+    <a href="/create">Create Landing Page</a>
+    <a href="/dashboard">Dashboard</a>
+    <a href="/logout">Logout</a>
+  {% else %}
+    <a href="/login">Login</a>
+    <a href="/signup">Sign Up</a>
+  {% endif %}
+</div>
+
     <section class="hero">
+        
+
         <div class="hero-content">
             <h1 class="brand">
                 LeadHunt

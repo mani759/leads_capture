@@ -9,6 +9,34 @@ body {
   height: 100vh;
 }
 
+.top-nav{
+  background: linear-gradient(135deg, #7F00FF, #00C6FF);
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 50px;
+  padding: 15px;
+
+}
+
+.top-nav a{
+  background-color: #e6f0ff;
+  padding: 13px 15px;
+  border-radius: 13px;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+  color: #7F00FF;
+  transition: all 0.3s ease;
+}
+
+.top-nav a:hover{
+  transform: translateY(-3px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+  /* background-color:lightblue; */
+  background: linear-gradient(45deg, #6c5ce7, #ff6b6b);
+  
+}
 /* HERO SECTION */
 .hero {
   height: 100vh;
